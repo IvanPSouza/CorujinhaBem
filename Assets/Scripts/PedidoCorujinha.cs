@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,7 +10,13 @@ public class PedidoCorujinha : MonoBehaviour
     [Header("Texto UI (TMP)")]
     public TMP_Text textoPedido;
 
+    [Header("Misturador")]
+    public Misturador misturador;
+
     private Tipagem objetoEscolhido;
+
+    // Controle de clique
+    private bool podeClicar = true;
 
     void Start()
     {
@@ -19,27 +25,57 @@ public class PedidoCorujinha : MonoBehaviour
 
     void GerarPedido()
     {
+        if (objetos == null || objetos.Count == 0)
+        {
+            Debug.LogError("Lista de objetos vazia!");
+            return;
+        }
+
         int index = Random.Range(0, objetos.Count);
         objetoEscolhido = objetos[index];
 
-        string cor = objetoEscolhido.corSelecionada.ToString();
-        string tamanho = objetoEscolhido.tamanhoSelecionado.ToString();
+        textoPedido.text = $"VocÃª pode pescar um peixe {GetDescricaoPedido()}?";
+    }
 
-        textoPedido.text = $"Poderia pescar um peixe {cor} {tamanho}?";
+    string GetDescricaoPedido()
+    {
+        return $"{objetoEscolhido.corSelecionada} {objetoEscolhido.tamanhoSelecionado}";
     }
 
     public void VerificarResposta(Tipagem objetoClicado)
     {
-        if (objetoClicado == objetoEscolhido)
+        // Bloqueia spam
+        if (!podeClicar) return;
+
+        if (
+            objetoClicado.corSelecionada == objetoEscolhido.corSelecionada &&
+            objetoClicado.tamanhoSelecionado == objetoEscolhido.tamanhoSelecionado
+        )
         {
             textoPedido.text = "Obrigado!";
+
+            podeClicar = false; // trava clique
+
+            Invoke(nameof(NovoPedidoComMistura), 2f);
         }
         else
         {
-            string cor = objetoEscolhido.corSelecionada.ToString();
-            string tamanho = objetoEscolhido.tamanhoSelecionado.ToString();
-
-            textoPedido.text = $"Ops, não é esse. Eu quero um peixe {cor} {tamanho}";
+            textoPedido.text = $"Ops! Quero um peixe {GetDescricaoPedido()}";
         }
+    }
+
+    void NovoPedidoComMistura()
+    {
+        // Reembaralha
+        if (misturador != null)
+        {
+            misturador.DistribuirObjetos();
+        }
+
+        // Novo pedido
+        GerarPedido();
+
+        // Libera clique novamente
+        podeClicar = true;
     }
 }

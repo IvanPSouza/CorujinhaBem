@@ -348,6 +348,7 @@ MonoBehaviour:
   - {fileID: 1604228109977374084}
   - {fileID: 6206627569303109120}
   textoPedido: {fileID: 1710537370}
+  misturador: {fileID: 162846845}
 --- !u!1 &188343751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,25 +1588,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2111479846}
     m_Modifications:
-    - target: {fileID: 1723890565495055803, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
-      propertyPath: gerenciador
-      value: 
-      objectReference: {fileID: 162846847}
     - target: {fileID: 2742175310909540971, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
       propertyPath: m_Name
       value: Tampinha_G_P
-      objectReference: {fileID: 0}
-    - target: {fileID: 2981422546148656962, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2981422546148656962, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2981422546148656962, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2981422546148656962, guid: 4182cf920c2d2b8488257679c6e8537a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1686,18 +1671,6 @@ PrefabInstance:
       value: Tampinha_Y_P
       objectReference: {fileID: 0}
     - target: {fileID: 6581532736452031276, guid: 04271d5a32eec4544b778298558245b5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581532736452031276, guid: 04271d5a32eec4544b778298558245b5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581532736452031276, guid: 04271d5a32eec4544b778298558245b5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581532736452031276, guid: 04271d5a32eec4544b778298558245b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
@@ -1737,10 +1710,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7339201017757635029, guid: 04271d5a32eec4544b778298558245b5, type: 3}
-      propertyPath: gerenciador
-      value: 
-      objectReference: {fileID: 162846847}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2272,18 +2241,6 @@ PrefabInstance:
       value: Tampinha_B_P
       objectReference: {fileID: 0}
     - target: {fileID: 2172740950303751279, guid: 0a46700393109824ba4bd8512ccca048, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172740950303751279, guid: 0a46700393109824ba4bd8512ccca048, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172740950303751279, guid: 0a46700393109824ba4bd8512ccca048, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172740950303751279, guid: 0a46700393109824ba4bd8512ccca048, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
       objectReference: {fileID: 0}
@@ -2323,10 +2280,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2354108504890826390, guid: 0a46700393109824ba4bd8512ccca048, type: 3}
-      propertyPath: gerenciador
-      value: 
-      objectReference: {fileID: 162846847}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2448,18 +2401,6 @@ PrefabInstance:
       value: Tampinha_R_P
       objectReference: {fileID: 0}
     - target: {fileID: 5712468396811843663, guid: e57ee975955cbce4990d5807145d1571, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5712468396811843663, guid: e57ee975955cbce4990d5807145d1571, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5712468396811843663, guid: e57ee975955cbce4990d5807145d1571, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5712468396811843663, guid: e57ee975955cbce4990d5807145d1571, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
       objectReference: {fileID: 0}
@@ -2499,10 +2440,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8199536402232220342, guid: e57ee975955cbce4990d5807145d1571, type: 3}
-      propertyPath: gerenciador
-      value: 
-      objectReference: {fileID: 162846847}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

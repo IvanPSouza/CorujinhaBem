@@ -14,31 +14,40 @@ public class Misturador : MonoBehaviour
         DistribuirObjetos();
     }
 
-    void DistribuirObjetos()
+    public void DistribuirObjetos()
     {
-        // Verificação básica
+        if (objetos == null || locais == null)
+        {
+            Debug.LogError("Listas não atribuídas!");
+            return;
+        }
+
         if (objetos.Count > locais.Count)
         {
             Debug.LogError("Há mais objetos do que locais disponíveis!");
             return;
         }
 
-        // Criar uma cópia dos locais para não modificar a lista original
-        List<Transform> locaisDisponiveis = new List<Transform>(locais);
+        List<Transform> locaisEmbaralhados = new List<Transform>(locais);
+        Embaralhar(locaisEmbaralhados);
 
-        foreach (GameObject obj in objetos)
+        for (int i = 0; i < objetos.Count; i++)
         {
-            // Escolhe um índice aleatório
-            int index = Random.Range(0, locaisDisponiveis.Count);
+            GameObject obj = objetos[i];
+            Transform local = locaisEmbaralhados[i];
 
-            // Pega o local correspondente
-            Transform localEscolhido = locaisDisponiveis[index];
+            obj.transform.SetParent(local);
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+        }
+    }
 
-            // Move o objeto para o local
-            obj.transform.position = localEscolhido.position;
-
-            // Remove o local usado para não repetir
-            locaisDisponiveis.RemoveAt(index);
+    public void Embaralhar<T>(List<T> lista)
+    {
+        for (int i = 0; i < lista.Count; i++)
+        {
+            int rand = Random.Range(i, lista.Count);
+            (lista[i], lista[rand]) = (lista[rand], lista[i]);
         }
     }
 }

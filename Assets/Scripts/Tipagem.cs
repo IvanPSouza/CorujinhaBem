@@ -28,9 +28,9 @@ public class Tipagem : MonoBehaviour
     {
         transform.localScale = tamanhoSelecionado switch
         {
-            Tamanho.Pequeno => Vector3.one * 0.15f,
-            Tamanho.Medio => Vector3.one * 0.2f,
-            Tamanho.Grande => Vector3.one * 0.25f,
+            Tamanho.Pequeno => Vector3.one * 0.1f,
+            Tamanho.Medio => Vector3.one * 0.15f,
+            Tamanho.Grande => Vector3.one * 0.2f,
             _ => Vector3.one
         };
     }

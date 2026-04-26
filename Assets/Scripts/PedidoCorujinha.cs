@@ -7,19 +7,25 @@ public class PedidoCorujinha : MonoBehaviour
     [Header("Lista de objetos")]
     public List<Tipagem> objetos;
 
-    [Header("Texto UI (TMP)")]
+    [Header("Texto UI pedido (TMP)")]
     public TMP_Text textoPedido;
+
+    [Header("Texto UI score (TMP)")]
+    public TMP_Text textoScore;
 
     [Header("Misturador")]
     public Misturador misturador;
 
     private Tipagem objetoEscolhido;
 
+    private int Score;
+
     // Controle de clique
     private bool podeClicar = true;
 
     void Start()
     {
+        Score = 0;
         GerarPedido();
     }
 
@@ -55,6 +61,10 @@ public class PedidoCorujinha : MonoBehaviour
             textoPedido.text = "Obrigado!";
 
             podeClicar = false; // trava clique
+
+            Score++;
+
+            textoScore.text = $"{Score}";
 
             Invoke(nameof(NovoPedidoComMistura), 2f);
         }

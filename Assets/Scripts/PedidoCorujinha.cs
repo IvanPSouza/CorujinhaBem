@@ -1,31 +1,23 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PedidoCorujinha : MonoBehaviour
 {
     [Header("Lista de objetos")]
     public List<Tipagem> objetos;
 
-    [Header("Texto UI pedido (TMP)")]
+    [Header("Texto UI (TMP)")]
     public TMP_Text textoPedido;
 
-    [Header("Texto UI score (TMP)")]
-    public TMP_Text textoScore;
-
-    [Header("Misturador")]
-    public Misturador misturador;
+    [Header("Cena ao finalizar")]
+    public string nomeDaCenaFinal;
 
     private Tipagem objetoEscolhido;
 
-    private int Score;
-
-    // Controle de clique
-    private bool podeClicar = true;
-
     void Start()
     {
-        Score = 0;
         GerarPedido();
     }
 
@@ -33,7 +25,7 @@ public class PedidoCorujinha : MonoBehaviour
     {
         if (objetos == null || objetos.Count == 0)
         {
-            Debug.LogError("Lista de objetos vazia!");
+            FinalizarJogo();
             return;
         }
 
@@ -50,23 +42,21 @@ public class PedidoCorujinha : MonoBehaviour
 
     public void VerificarResposta(Tipagem objetoClicado)
     {
-        // Bloqueia spam
-        if (!podeClicar) return;
-
         if (
             objetoClicado.corSelecionada == objetoEscolhido.corSelecionada &&
             objetoClicado.tamanhoSelecionado == objetoEscolhido.tamanhoSelecionado
         )
         {
-            textoPedido.text = "Obrigado!";
+            textoPedido.text = "Boa!";
 
-            podeClicar = false; // trava clique
+            // Remove da lista
+            objetos.Remove(objetoClicado);
 
-            Score++;
+            // Desativa o objeto
+            objetoClicado.gameObject.SetActive(false);
 
-            textoScore.text = $"{Score}";
-
-            Invoke(nameof(NovoPedidoComMistura), 2f);
+            // Próximo pedido ou fim
+            GerarPedido();
         }
         else
         {
@@ -74,18 +64,17 @@ public class PedidoCorujinha : MonoBehaviour
         }
     }
 
-    void NovoPedidoComMistura()
+    void FinalizarJogo()
     {
-        // Reembaralha
-        if (misturador != null)
+        textoPedido.text = "Acabaram os peixes!";
+
+        if (!string.IsNullOrEmpty(nomeDaCenaFinal))
         {
-            misturador.DistribuirObjetos();
+            SceneManager.LoadScene(nomeDaCenaFinal);
         }
-
-        // Novo pedido
-        GerarPedido();
-
-        // Libera clique novamente
-        podeClicar = true;
+        else
+        {
+            Debug.LogWarning("Nome da cena final não definido!");
+        }
     }
 }

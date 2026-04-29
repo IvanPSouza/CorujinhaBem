@@ -14,15 +14,34 @@ public class PedidoCorujinha : MonoBehaviour
     [Header("Cena ao finalizar")]
     public string nomeDaCenaFinal;
 
+    [Header("Menu Final")]
+    public GameObject menuPause;
+
+    [Header("Menu Vitoria")]
+    public GameObject menuVitoria;
+
+    [Header("Texto Tentativas")]
+    public TMP_Text textoTentativas;
+
     private Tipagem objetoEscolhido;
+
+    private bool jogoFinalizado = false;
+    private bool podeClicar = true; //controle de spam
+    private int Tentativas = 0;
 
     void Start()
     {
+        if (menuPause != null)
+            menuPause.SetActive(false);
+        podeClicar = true;
+
         GerarPedido();
     }
 
     void GerarPedido()
     {
+        if (jogoFinalizado) return;
+
         if (objetos == null || objetos.Count == 0)
         {
             FinalizarJogo();
@@ -39,42 +58,85 @@ public class PedidoCorujinha : MonoBehaviour
     {
         return $"{objetoEscolhido.corSelecionada} {objetoEscolhido.tamanhoSelecionado}";
     }
+    private void Update()
+    {
+       /* if(Time.timeScale == 0f && )
+        {
 
+        } */
+    }
     public void VerificarResposta(Tipagem objetoClicado)
     {
+        // bloqueia clique durante delay ou fim
+        if (!podeClicar || jogoFinalizado) return;
+
         if (
             objetoClicado.corSelecionada == objetoEscolhido.corSelecionada &&
             objetoClicado.tamanhoSelecionado == objetoEscolhido.tamanhoSelecionado
         )
         {
-            textoPedido.text = "Boa!";
+            textoPedido.text = "Muito obrigado!";
 
-            // Remove da lista
+            //trava clique
+            podeClicar = false;
+
+            //Remove e desativa
             objetos.Remove(objetoClicado);
-
-            // Desativa o objeto
             objetoClicado.gameObject.SetActive(false);
 
-            // Próximo pedido ou fim
-            GerarPedido();
+            //espera 2 segundos antes do próximo pedido
+            Invoke(nameof(ProximoPasso), 2f);
         }
         else
         {
-            textoPedido.text = $"Ops! Quero um peixe {GetDescricaoPedido()}";
+            textoPedido.text = $"Ops! Eu quero um peixe {GetDescricaoPedido()}";
         }
+
+        Tentativas++;
+    }
+
+    void ProximoPasso()
+    {
+        GerarPedido();
+
+        //libera clique novamente
+        podeClicar = true;
     }
 
     void FinalizarJogo()
     {
-        textoPedido.text = "Acabaram os peixes!";
+        jogoFinalizado = true;
 
-        if (!string.IsNullOrEmpty(nomeDaCenaFinal))
+        textoPedido.text = "Acabaram os peixes, Paraben!";
+
+        if (menuVitoria != null)
         {
-            SceneManager.LoadScene(nomeDaCenaFinal);
+            textoTentativas.text = $"Voce jogou sua vara {Tentativas} vezes";
+            menuVitoria.SetActive(true);
         }
         else
         {
-            Debug.LogWarning("Nome da cena final não definido!");
+            Debug.LogWarning("Menu final não atribuído!");
+        }
+    }
+
+    void CarregarCenaFinal()
+    {
+        SceneManager.LoadScene(nomeDaCenaFinal);
+    }
+
+    public void Pausar()
+    {
+        //menuPause.SetActive(!menuPause.activeSelf);
+        if (menuPause.activeSelf == false)
+        {
+            podeClicar = true;
+
+            //Se pausado entre o tempo de cada pedido pode fazer as tampinhas sejam clicaveis antes da hora
+        }
+        else
+        {
+            podeClicar = false;
         }
     }
 }

@@ -894,7 +894,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1651163491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 646224008}
+        m_TargetAssemblyTypeName: CenasBotoes, Assembly-CSharp
+        m_MethodName: MudarCena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Labirinto1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1651163491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,7 +1119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1916699725}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 646224008}
+        m_TargetAssemblyTypeName: CenasBotoes, Assembly-CSharp
+        m_MethodName: MudarCena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Labirinto2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1916699725
 MonoBehaviour:
   m_ObjectHideFlags: 0

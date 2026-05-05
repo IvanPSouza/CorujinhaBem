@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -23,17 +24,35 @@ public class PedidoCorujinha : MonoBehaviour
     [Header("Texto Tentativas")]
     public TMP_Text textoTentativas;
 
+    [Header("Áudio")]
+    public AudioSource audioSource;
+
+    public AudioClip audioPadrao;
+    public AudioClip audioOps;
+    public AudioClip audioObrigado;
+
+    // tamanho
+    public AudioClip pequenoClip;
+    public AudioClip medioClip;
+    public AudioClip grandeClip;
+
+    // cor
+    public AudioClip verdeClip;
+    public AudioClip vermelhoClip;
+    public AudioClip azulClip;
+    public AudioClip amareloClip;
+
     private Tipagem objetoEscolhido;
 
     private bool jogoFinalizado = false;
-    private bool podeClicar = true; //controle de spam
+    private bool podeClicar = true;
+
     private int Tentativas = 0;
 
     void Start()
     {
         if (menuPause != null)
             menuPause.SetActive(false);
-        podeClicar = true;
 
         GerarPedido();
     }
@@ -52,22 +71,18 @@ public class PedidoCorujinha : MonoBehaviour
         objetoEscolhido = objetos[index];
 
         textoPedido.text = $"Você pode pescar um peixe {GetDescricaoPedido()}?";
+
+        // toca áudio do pedido
+        TocarFrase(audioPadrao);
     }
 
     string GetDescricaoPedido()
     {
         return $"{objetoEscolhido.corSelecionada} {objetoEscolhido.tamanhoSelecionado}";
     }
-    private void Update()
-    {
-       /* if(Time.timeScale == 0f && )
-        {
 
-        } */
-    }
     public void VerificarResposta(Tipagem objetoClicado)
     {
-        // bloqueia clique durante delay ou fim
         if (!podeClicar || jogoFinalizado) return;
 
         if (
@@ -77,19 +92,22 @@ public class PedidoCorujinha : MonoBehaviour
         {
             textoPedido.text = "Muito obrigado!";
 
-            //trava clique
+            // áudio de acerto
+            TocarAudioSimples(audioObrigado);
+
             podeClicar = false;
 
-            //Remove e desativa
             objetos.Remove(objetoClicado);
             objetoClicado.gameObject.SetActive(false);
 
-            //espera 2 segundos antes do próximo pedido
             Invoke(nameof(ProximoPasso), 2f);
         }
         else
         {
             textoPedido.text = $"Ops! Eu quero um peixe {GetDescricaoPedido()}";
+
+            // áudio de erro com descrição
+            TocarFrase(audioOps);
         }
 
         Tentativas++;
@@ -98,8 +116,6 @@ public class PedidoCorujinha : MonoBehaviour
     void ProximoPasso()
     {
         GerarPedido();
-
-        //libera clique novamente
         podeClicar = true;
     }
 
@@ -127,16 +143,80 @@ public class PedidoCorujinha : MonoBehaviour
 
     public void Pausar()
     {
-        //menuPause.SetActive(!menuPause.activeSelf);
         if (menuPause.activeSelf == false)
         {
             podeClicar = true;
-
-            //Se pausado entre o tempo de cada pedido pode fazer as tampinhas sejam clicaveis antes da hora
         }
         else
         {
             podeClicar = false;
+        }
+    }
+
+    // =========================
+    // SISTEMA DE ÁUDIO
+    // =========================
+
+    void TocarFrase(AudioClip audioBase)
+    {
+        if (audioSource == null) return;
+
+        audioSource.Stop();
+        StopAllCoroutines();
+        StartCoroutine(TocarFraseAudio(audioBase));
+    }
+
+    void TocarAudioSimples(AudioClip clip)
+    {
+        if (audioSource == null || clip == null) return;
+
+        audioSource.Stop();
+        StopAllCoroutines();
+
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+
+    IEnumerator TocarFraseAudio(AudioClip audioBase)
+    {
+        // 1. base
+        if (audioBase != null)
+        {
+            audioSource.clip = audioBase;
+            audioSource.Play();
+            yield return new WaitWhile(() => audioSource.isPlaying);
+        }
+
+        // 2. cor (ANTES do tamanho agora)
+        AudioClip corClip = objetoEscolhido.corSelecionada switch
+        {
+            Tipagem.Cor.Verde => verdeClip,
+            Tipagem.Cor.Vermelho => vermelhoClip,
+            Tipagem.Cor.Azul => azulClip,
+            Tipagem.Cor.Amarelo => amareloClip,
+            _ => null
+        };
+
+        if (corClip != null)
+        {
+            audioSource.clip = corClip;
+            audioSource.Play();
+            yield return new WaitWhile(() => audioSource.isPlaying);
+        }
+
+        // 3. tamanho (DEPOIS da cor)
+        AudioClip tamanhoClip = objetoEscolhido.tamanhoSelecionado switch
+        {
+            Tipagem.Tamanho.Pequeno => pequenoClip,
+            Tipagem.Tamanho.Medio => medioClip,
+            Tipagem.Tamanho.Grande => grandeClip,
+            _ => null
+        };
+
+        if (tamanhoClip != null)
+        {
+            audioSource.clip = tamanhoClip;
+            audioSource.Play();
         }
     }
 }

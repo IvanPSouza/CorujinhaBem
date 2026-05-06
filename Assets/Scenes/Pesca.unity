@@ -1185,8 +1185,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Voc\xE9 conseguiu!! Parabens"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &754953864
@@ -1642,8 +1642,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Voce precisou de 0 tentativas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &944034306
@@ -1963,7 +1963,7 @@ RectTransform:
   m_GameObject: {fileID: 1283237698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.69764197, y: 2.9815147, z: 1}
+  m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1710537369}
@@ -1971,7 +1971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.014, y: -0.001}
+  m_AnchoredPosition: {x: 0.020067453, y: -0.00167799}
   m_SizeDelta: {x: 14.0243, y: 3.812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283237700
@@ -2103,7 +2103,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1296977505471373243, guid: 81f95450d405ad749b1b363ce604af79, type: 3}
+  m_Sprite: {fileID: 6166245508404976135, guid: 94a4adb64694bc04ea3e5777e151ba6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2122,8 +2122,8 @@ Transform:
   m_GameObject: {fileID: 1300754565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3734, y: -3.8644705, z: 0}
-  m_LocalScale: {x: 1.4334, y: 0.3354, z: 1}
+  m_LocalPosition: {x: 1.3734, y: -4.03, z: 0}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1283237699}
@@ -2188,8 +2188,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Jogar de Novo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2213,8 +2213,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2327,8 +2327,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1395502730
@@ -2495,8 +2495,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tela inicial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1486012920
@@ -2827,7 +2827,7 @@ GameObject:
   - component: {fileID: 1683862765}
   - component: {fileID: 1683862764}
   m_Layer: 0
-  m_Name: PlaceholderCoruja_0
+  m_Name: CojurinhaBem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2880,9 +2880,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2915011824375254429, guid: 55588e661e1efe543b76a9c0656aef7d, type: 3}
+  m_Sprite: {fileID: 1734288074390380468, guid: 73ffe985e221b5645b167f941139777f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2901,9 +2901,9 @@ Transform:
   m_GameObject: {fileID: 1683862763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.426335, y: -4.52, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -6.85, y: -4.23, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2966,8 +2966,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Poderia pescar um peixe vermelho medio?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3284,8 +3284,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tela inicial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3585,13 +3585,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Jogo em espera
 
-
     Clique aqui para continuar
 
     \/'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
+  m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

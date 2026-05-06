@@ -90,7 +90,7 @@ public class PedidoCorujinha : MonoBehaviour
             objetoClicado.tamanhoSelecionado == objetoEscolhido.tamanhoSelecionado
         )
         {
-            textoPedido.text = "Muito obrigado!";
+            textoPedido.text = "Muito obrigada!";
 
             // áudio de acerto
             TocarAudioSimples(audioObrigado);
@@ -123,7 +123,7 @@ public class PedidoCorujinha : MonoBehaviour
     {
         jogoFinalizado = true;
 
-        textoPedido.text = "Acabaram os peixes, Paraben!";
+        textoPedido.text = "Acabaram os peixes, Parabens!";
 
         if (menuVitoria != null)
         {

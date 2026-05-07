@@ -767,7 +767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Voc\xE9 conseguiu!! Parabens"
+  m_text: "Voc\xEA conseguiu!! Parab\xE9ns"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}

@@ -104,7 +104,7 @@ public class PedidoCorujinha : MonoBehaviour
         }
         else
         {
-            textoPedido.text = $"Ops! Eu quero um peixe {GetDescricaoPedido()}";
+            textoPedido.text = $"Ops! Eu quero um peixe {GetDescricaoPedido()}.";
 
             // áudio de erro com descrição
             TocarFrase(audioOps);
@@ -127,7 +127,7 @@ public class PedidoCorujinha : MonoBehaviour
 
         if (menuVitoria != null)
         {
-            textoTentativas.text = $"Voce jogou sua vara {Tentativas} vezes";
+            textoTentativas.text = $"Voce jogou sua vara {Tentativas} vezes.";
             menuVitoria.SetActive(true);
         }
         else

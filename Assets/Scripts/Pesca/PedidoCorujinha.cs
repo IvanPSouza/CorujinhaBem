@@ -70,7 +70,7 @@ public class PedidoCorujinha : MonoBehaviour
         int index = Random.Range(0, objetos.Count);
         objetoEscolhido = objetos[index];
 
-        textoPedido.text = $"Você pode pescar um peixe {GetDescricaoPedido()}?";
+        textoPedido.text = $"Você pode pescar uma tampinha {GetDescricaoPedido()}?";
 
         // toca áudio do pedido
         TocarFrase(audioPadrao);

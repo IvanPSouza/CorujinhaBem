@@ -637,7 +637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pescaria Com Bem
+  m_text: Pescaria com Bem
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Colorir Com Bem
+  m_text: Colorir com Bem
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}
   m_sharedMaterial: {fileID: -7128923600491377979, guid: e7071947c5f92164ead7f2ce93ced5a5, type: 2}

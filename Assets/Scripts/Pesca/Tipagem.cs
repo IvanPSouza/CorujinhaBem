@@ -3,7 +3,7 @@ using UnityEngine;
 public class Tipagem : MonoBehaviour
 {
     public enum Cor { Verde, Vermelho, Azul, Amarelo }
-    public enum Tamanho { Pequeno, Medio, Grande }
+    public enum Tamanho { Pequeno, Media, Grande }
 
     [Header("Configurações do Objeto")]
     public Cor corSelecionada;
@@ -29,7 +29,7 @@ public class Tipagem : MonoBehaviour
         transform.localScale = tamanhoSelecionado switch
         {
             Tamanho.Pequeno => Vector3.one * 0.1f,
-            Tamanho.Medio => Vector3.one * 0.15f,
+            Tamanho.Media => Vector3.one * 0.15f,
             Tamanho.Grande => Vector3.one * 0.2f,
             _ => Vector3.one
         };

@@ -491,11 +491,11 @@ MonoBehaviour:
   menuVitoria: {fileID: 1496864382}
   textoTentativas: {fileID: 944034305}
   audioSource: {fileID: 519420033}
-  audioPadrao: {fileID: 8300000, guid: 43902dd3053125241bfe27a3abff4954, type: 3}
-  audioOps: {fileID: 8300000, guid: 92c4481c406574641a72f1a6a99a68fc, type: 3}
+  audioPadrao: {fileID: 8300000, guid: 54e7be6e698250743918a5d2bde374e1, type: 3}
+  audioOps: {fileID: 8300000, guid: 675b8b13156faa44bbd60ae6d9abfa8e, type: 3}
   audioObrigado: {fileID: 8300000, guid: b37d4f40f2d88e94e9433b957cd15e6a, type: 3}
   pequenoClip: {fileID: 8300000, guid: f767cb0fe65b24743901593d57aa7de8, type: 3}
-  medioClip: {fileID: 8300000, guid: d1bccb9a19be6bc46b4409150715f78b, type: 3}
+  medioClip: {fileID: 8300000, guid: 843dbb774286b3d49b05fffee3f44811, type: 3}
   grandeClip: {fileID: 8300000, guid: 1346c153c130eeb41a3fdafd1dd54adb, type: 3}
   verdeClip: {fileID: 8300000, guid: 47ea7cbabbccb8c4c83eb6572feef79c, type: 3}
   vermelhoClip: {fileID: 8300000, guid: 6b61855b24e604a4c8213441c9c27aef, type: 3}

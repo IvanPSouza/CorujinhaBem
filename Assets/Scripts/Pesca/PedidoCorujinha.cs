@@ -104,7 +104,7 @@ public class PedidoCorujinha : MonoBehaviour
         }
         else
         {
-            textoPedido.text = $"Ops! Eu quero um peixe {GetDescricaoPedido()}.";
+            textoPedido.text = $"Ops! Eu quero uma tampinha {GetDescricaoPedido()}.";
 
             // áudio de erro com descrição
             TocarFrase(audioOps);
@@ -123,7 +123,7 @@ public class PedidoCorujinha : MonoBehaviour
     {
         jogoFinalizado = true;
 
-        textoPedido.text = "Acabaram os peixes, Parabens!";
+        textoPedido.text = "Acabaram as tampinhas, Parabens!";
 
         if (menuVitoria != null)
         {
@@ -208,7 +208,7 @@ public class PedidoCorujinha : MonoBehaviour
         AudioClip tamanhoClip = objetoEscolhido.tamanhoSelecionado switch
         {
             Tipagem.Tamanho.Pequeno => pequenoClip,
-            Tipagem.Tamanho.Medio => medioClip,
+            Tipagem.Tamanho.Media => medioClip,
             Tipagem.Tamanho.Grande => grandeClip,
             _ => null
         };
